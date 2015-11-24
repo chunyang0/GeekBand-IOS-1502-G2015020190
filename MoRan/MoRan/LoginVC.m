@@ -29,6 +29,9 @@
     contectView.backgroundColor = RGB(0xeb, 0xec, 0xec);
     [self.view addSubview:contectView];
     
+    /* TODO:设置属性 */
+    _accountTF = [[UITextField alloc] initWithFrame:CGRectZero];
+    
 }
 
 - (void)viewDidLoad {
