@@ -8,6 +8,7 @@
 
 #import "LoginVC.h"
 #import "Globe.h"
+#import "netDataManager.h"
 
 
 @interface LoginVC ()
@@ -31,6 +32,17 @@
     
     /* TODO:设置属性 */
     _accountTF = [[UITextField alloc] initWithFrame:CGRectZero];
+    
+    /* TEST CODE */
+    NSMutableDictionary * testDic = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                        @"testProject3",            @"username",
+                                        @"123456789",               @"password",
+                                        @"liyicong_dalian@163.com", @"email",
+                                        @"GeekBand-I150003",        @"gbid",
+                                        nil];
+
+    
+    [[netDataManager manager] postRequest:testDic subAddr:REGISTER];
     
 }
 
