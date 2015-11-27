@@ -51,7 +51,7 @@
 }
 
 /**
- * @flag 请求信息
+ * @flag 发送请求信息
  */
 - (void)postRequest:(NSDictionary *)paramDic subAddr:(NSString *)subAddr
 {
@@ -75,6 +75,8 @@
     NSURLConnection *urlConnection;
     urlConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
+
+
 
 #pragma mark - NSURLConnection delegate
 
@@ -122,17 +124,63 @@
 
 #pragma mark - reqMethod
 
-+ (void)registerWithName:(NSString *)name password:(NSString *)password email:(NSString *)email gid:(NSString *)gbid
+/**
+ * @flag 注册用户
+ */
+- (void)registerWithName:(NSString *)name password:(NSString *)password email:(NSString *)email gid:(NSString *)gbid
 {
     NSMutableDictionary * paramDic = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                             name,            @"username",
                                             password,        @"password",
                                             email,           @"email",
                                             gbid,            @"gbid",
-                                        nil];
+                                            nil];
 
 
-    [[netDataManager manager] postRequest:paramDic subAddr:REGISTER];
+    [self postRequest:paramDic subAddr:REGISTER];
+}
+
+/**
+ * @flag 用户登陆
+ */
+- (void)loginWithEmail:(NSString *)email password:(NSString *)password gid:(NSString *)gbid
+{
+    NSMutableDictionary * paramDic = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                      password,        @"password",
+                                      email,           @"email",
+                                      gbid,            @"gbid",
+                                      nil];
+    
+    
+    [self postRequest:paramDic subAddr:LOGIN];
+}
+
+/**
+ * @flag 上传用户头像
+ */
+- (void)updateHeadImage:(NSData *)imageData userID:(NSString *)user_id token:(NSString *)token
+{
+    NSMutableDictionary * paramDic = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                      user_id,        @"user_id",
+                                      token,          @"token",
+                                      imageData,      @"data",
+                                      nil];
+    
+    [self postRequest:paramDic subAddr:UPDATE_HEADIMAGE];
+}
+
+/**
+ * @flag 更改用户名
+ */
+- (void)renameWithNewName:(NSString *)new_name userID:(NSString *)user_id token:(NSString *)token
+{
+    NSMutableDictionary * paramDic = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                      user_id,        @"user_id",
+                                      token,          @"token",
+                                      new_name,       @"new_name",
+                                      nil];
+    
+    [self postRequest:paramDic subAddr:RENAME];
 }
 
 @end
