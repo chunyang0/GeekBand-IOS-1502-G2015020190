@@ -26,6 +26,8 @@
 #define PICTURE_CREATE      @"/picture/create"  //上传图片
 #define PICTURE_READ        @"/picture/read"    //访问图片
 
+/* TODO: 添加请求和应答的一一对应关系 */
+
 @implementation netDataManager
 
 + (netDataManager *)manager
@@ -48,6 +50,9 @@
     return self;
 }
 
+/**
+ * @flag 请求信息
+ */
 - (void)postRequest:(NSDictionary *)paramDic subAddr:(NSString *)subAddr
 {
     NSURL *url = [NSURL URLWithString:[SERVER_ADDR stringByAppendingString:subAddr]];
@@ -113,6 +118,21 @@
     }
     
     
+}
+
+#pragma mark - reqMethod
+
++ (void)registerWithName:(NSString *)name password:(NSString *)password email:(NSString *)email gid:(NSString *)gbid
+{
+    NSMutableDictionary * paramDic = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                            name,            @"username",
+                                            password,        @"password",
+                                            email,           @"email",
+                                            gbid,            @"gbid",
+                                        nil];
+
+
+    [[netDataManager manager] postRequest:paramDic subAddr:REGISTER];
 }
 
 @end
