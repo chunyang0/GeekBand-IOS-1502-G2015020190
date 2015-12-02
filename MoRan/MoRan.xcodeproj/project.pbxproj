@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0026F2501C0F29A800F2E9E6 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026F24D1C0F29A800F2E9E6 /* logo.png */; };
+		0026F2511C0F29A800F2E9E6 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026F24E1C0F29A800F2E9E6 /* logo@2x.png */; };
+		0026F2521C0F29A800F2E9E6 /* logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0026F24F1C0F29A800F2E9E6 /* logo@3x.png */; };
 		0066E0B81C0354A100186786 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0066E0B71C0354A100186786 /* main.m */; };
 		0066E0BB1C0354A100186786 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0066E0BA1C0354A100186786 /* AppDelegate.m */; };
 		0066E0BE1C0354A100186786 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0066E0BD1C0354A100186786 /* ViewController.m */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0026F24D1C0F29A800F2E9E6 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		0026F24E1C0F29A800F2E9E6 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		0026F24F1C0F29A800F2E9E6 /* logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@3x.png"; sourceTree = "<group>"; };
 		0066E0B31C0354A100186786 /* MoRan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoRan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0066E0B71C0354A100186786 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0066E0B91C0354A100186786 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -82,6 +88,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0026F24C1C0F29A800F2E9E6 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				0026F24D1C0F29A800F2E9E6 /* logo.png */,
+				0026F24E1C0F29A800F2E9E6 /* logo@2x.png */,
+				0026F24F1C0F29A800F2E9E6 /* logo@3x.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 		0066E0AA1C0354A100186786 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +140,7 @@
 		0066E0B61C0354A100186786 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0026F24C1C0F29A800F2E9E6 /* image */,
 				0066E0C71C0354A100186786 /* Info.plist */,
 				0066E0B71C0354A100186786 /* main.m */,
 			);
@@ -243,7 +260,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0066E0C31C0354A100186786 /* Assets.xcassets in Resources */,
+				0026F2511C0F29A800F2E9E6 /* logo@2x.png in Resources */,
 				0066E0F41C03626E00186786 /* Default-568h@2x.png in Resources */,
+				0026F2521C0F29A800F2E9E6 /* logo@3x.png in Resources */,
+				0026F2501C0F29A800F2E9E6 /* logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
