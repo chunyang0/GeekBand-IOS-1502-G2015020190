@@ -11,7 +11,7 @@
 #import "netDataManager.h"
 
 
-@interface LoginVC ()
+@interface LoginVC () <UITextFieldDelegate>
 
 @end
 
@@ -34,21 +34,71 @@
     contectView.backgroundColor = RGB(0xeb, 0xec, 0xec);
     [self.view addSubview:contectView];
     
-    //NSArray *test = [UIFont familyNames];
+    
+    UIFont *font = [UIFont fontWithName:@"Heiti SC" size:14];
     
     UILabel *email = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 60, 20)];
     email.text = @"邮箱：";
     email.backgroundColor = contectView.backgroundColor;
     email.textColor = RGB(0x44, 0x44, 0x44);
-    email.font = [UIFont fontWithName:@"Heiti SC" size:14];
+    email.font = font;
     [contectView addSubview:email];
     
-    /* TODO:设置属性 */
-    _accountTF = [[UITextField alloc] initWithFrame:CGRectZero];
+    _accountTF = [[UITextField alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(email.frame)+5, fullSrceenWidth()-30, 30)];
+    _accountTF.backgroundColor = [UIColor whiteColor];
+    _accountTF.font        = font;
+    _accountTF.delegate    = self;
+    _accountTF.borderStyle = UITextBorderStyleNone;
+    _accountTF.layer.cornerRadius = 5.0;
+    _accountTF.layer.masksToBounds = YES;
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 30)];
+    _accountTF.leftView = paddingView;
+    _accountTF.leftViewMode = UITextFieldViewModeAlways;
+    [contectView addSubview:_accountTF];
     
-    /* TEST CODE */
+    UILabel *password = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(_accountTF.frame)+10, 60, 20)];
+    password.text = @"密码：";
+    password.backgroundColor = contectView.backgroundColor;
+    password.textColor = RGB(0x44, 0x44, 0x44);
+    password.font = font;
+    [contectView addSubview:password];
     
+    _pwdTF = [[UITextField alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(password.frame)+5, fullSrceenWidth()-30, 30)];
+    _pwdTF.backgroundColor = [UIColor whiteColor];
+    _pwdTF.font        = font;
+    _pwdTF.delegate    = self;
+    _pwdTF.borderStyle = UITextBorderStyleNone;
+    _pwdTF.layer.cornerRadius = 5.0;
+    _pwdTF.layer.masksToBounds = YES;
+    paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 30)];
+    _pwdTF.leftView = paddingView;
+    _pwdTF.leftViewMode = UITextFieldViewModeAlways;
+    [contectView addSubview:_pwdTF];
     
+    _loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _loginBtn.frame = CGRectMake(15, CGRectGetMaxY(_pwdTF.frame)+20, fullSrceenWidth()-30, 30);
+    _loginBtn.titleLabel.font = [UIFont fontWithName:@"Heiti SC" size:16];
+    [_loginBtn setTitle:@"登录" forState:UIControlStateNormal];
+    [_loginBtn setTitleColor:RGB(0xff, 0xff, 0xff) forState:UIControlStateNormal];
+    [_loginBtn setBackgroundColor:RGB(0xee, 0x7f, 0x41)];
+    [_loginBtn addTarget:self
+              action:@selector(onTouchLoginBtn)
+    forControlEvents:UIControlEventTouchUpInside];
+    _loginBtn.layer.cornerRadius = 5.0;
+    _loginBtn.layer.masksToBounds = YES;
+    [contectView addSubview:_loginBtn];
+    
+    _registerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _registerBtn.frame = CGRectMake(15, CGRectGetMaxY(_loginBtn.frame)+5, fullSrceenWidth()-30, 30);
+    _registerBtn.titleLabel.font = font;
+    _registerBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [_registerBtn setTitle:@"注册新账号" forState:UIControlStateNormal];
+    [_registerBtn setTitleColor:RGB(0x44, 0x44, 0x44) forState:UIControlStateNormal];
+    [_registerBtn setBackgroundColor:contectView.backgroundColor];
+    [_registerBtn addTarget:self
+                  action:@selector(onTouchRegisterBtn)
+        forControlEvents:UIControlEventTouchUpInside];
+    [contectView addSubview:_registerBtn];
 }
 
 - (void)viewDidLoad {
@@ -56,19 +106,45 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+/**
+ * @flag 点击登录按钮响应方法
+ */
+- (void)onTouchLoginBtn
+{
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+/**
+ * @flag 点击注册按钮响应方法
+ */
+- (void)onTouchRegisterBtn
+{
+    
 }
-*/
+
+#pragma mark - textfield delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (textField == _accountTF) {
+
+    }
+}
+
 
 @end

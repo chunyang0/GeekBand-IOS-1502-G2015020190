@@ -12,7 +12,7 @@
 
 @property (nonatomic) UITextField *accountTF;
 @property (nonatomic) UITextField *pwdTF;
-@property (nonatomic) UIButton    *LoginBtn;
+@property (nonatomic) UIButton    *loginBtn;
 @property (nonatomic) UIButton    *registerBtn;
 
 @end
