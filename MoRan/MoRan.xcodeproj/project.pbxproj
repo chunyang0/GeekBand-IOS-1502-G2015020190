@@ -17,7 +17,7 @@
 		0066E0D11C0354A100186786 /* MoRanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0066E0D01C0354A100186786 /* MoRanTests.m */; };
 		0066E0EB1C0356F700186786 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0066E0EA1C0356F700186786 /* LoginVC.m */; };
 		0066E0EE1C0359F700186786 /* Globe.m in Sources */ = {isa = PBXBuildFile; fileRef = 0066E0ED1C0359F700186786 /* Globe.m */; };
-		0066E0F41C03626E00186786 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0066E0F31C03626E00186786 /* Default-568h@2x.png */; };
+		00B384AD1C219BFC000F6418 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B384AC1C219BFC000F6418 /* RegisterVC.m */; };
 		2130C8601C07185800E3BDA0 /* netDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2130C85F1C07185800E3BDA0 /* netDataManager.m */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +58,8 @@
 		0066E0EA1C0356F700186786 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		0066E0EC1C0359F700186786 /* Globe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globe.h; sourceTree = "<group>"; };
 		0066E0ED1C0359F700186786 /* Globe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globe.m; sourceTree = "<group>"; };
-		0066E0F31C03626E00186786 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		00B384AB1C219BFC000F6418 /* RegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
+		00B384AC1C219BFC000F6418 /* RegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
 		2130C85E1C07185800E3BDA0 /* netDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = netDataManager.h; sourceTree = "<group>"; };
 		2130C85F1C07185800E3BDA0 /* netDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = netDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,7 +102,6 @@
 		0066E0AA1C0354A100186786 = {
 			isa = PBXGroup;
 			children = (
-				0066E0F31C03626E00186786 /* Default-568h@2x.png */,
 				0066E0B51C0354A100186786 /* MoRan */,
 				0066E0CF1C0354A100186786 /* MoRanTests */,
 				0066E0B41C0354A100186786 /* Products */,
@@ -129,6 +129,8 @@
 				0066E0ED1C0359F700186786 /* Globe.m */,
 				0066E0E91C0356F700186786 /* LoginVC.h */,
 				0066E0EA1C0356F700186786 /* LoginVC.m */,
+				00B384AB1C219BFC000F6418 /* RegisterVC.h */,
+				00B384AC1C219BFC000F6418 /* RegisterVC.m */,
 				2130C85E1C07185800E3BDA0 /* netDataManager.h */,
 				2130C85F1C07185800E3BDA0 /* netDataManager.m */,
 				0066E0C21C0354A100186786 /* Assets.xcassets */,
@@ -261,7 +263,6 @@
 			files = (
 				0066E0C31C0354A100186786 /* Assets.xcassets in Resources */,
 				0026F2511C0F29A800F2E9E6 /* logo@2x.png in Resources */,
-				0066E0F41C03626E00186786 /* Default-568h@2x.png in Resources */,
 				0026F2521C0F29A800F2E9E6 /* logo@3x.png in Resources */,
 				0026F2501C0F29A800F2E9E6 /* logo.png in Resources */,
 			);
@@ -290,6 +291,7 @@
 			files = (
 				0066E0EE1C0359F700186786 /* Globe.m in Sources */,
 				0066E0BE1C0354A100186786 /* ViewController.m in Sources */,
+				00B384AD1C219BFC000F6418 /* RegisterVC.m in Sources */,
 				0066E0BB1C0354A100186786 /* AppDelegate.m in Sources */,
 				2130C8601C07185800E3BDA0 /* netDataManager.m in Sources */,
 				0066E0EB1C0356F700186786 /* LoginVC.m in Sources */,

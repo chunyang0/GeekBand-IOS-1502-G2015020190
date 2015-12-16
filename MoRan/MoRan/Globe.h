@@ -20,6 +20,8 @@
 # define CGFloat_fabs fabsf
 #endif
 
+#define GID @"G2015020190"
+
 // 屏幕宽度
 CGFloat fullSrceenWidth();
 

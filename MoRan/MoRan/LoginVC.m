@@ -9,6 +9,7 @@
 #import "LoginVC.h"
 #import "Globe.h"
 #import "netDataManager.h"
+#import "RegisterVC.h"
 
 
 @interface LoginVC () <UITextFieldDelegate>
@@ -111,7 +112,20 @@
  */
 - (void)onTouchLoginBtn
 {
+    NSString *account = _accountTF.text;
+    NSString *password = _pwdTF.text;
     
+    if (![self checkEmail:_accountTF.text]) {
+        /* TODO:提示用户 */
+        return;
+    }
+    
+    if (![self checkPassword:_pwdTF.text]) {
+        /* TODO:提示用户 */
+        return;
+    }
+    
+    [[netDataManager manager] loginWithEmail:account password:password gid:GID];
 }
 
 /**
@@ -119,7 +133,8 @@
  */
 - (void)onTouchRegisterBtn
 {
-    
+    RegisterVC *registerVC = [RegisterVC new];
+    [self presentViewController:registerVC animated:YES completion:^{}];
 }
 
 #pragma mark - textfield delegate
@@ -142,9 +157,27 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     if (textField == _accountTF) {
-
+        if (![self checkEmail:_accountTF.text]) {
+            /* TODO:提示用户 */
+        }
+    }
+    else if (textField == _pwdTF) {
+        if (![self checkPassword:_pwdTF.text]) {
+            /* TODO:提示用户 */
+        }
     }
 }
 
+- (BOOL)checkEmail:(NSString *)email
+{
+    /* TODO:检测Email是否合法 */
+    return YES;
+}
+
+- (BOOL)checkPassword:(NSString *)pwd
+{
+    /* TODO:检测Email是否合法 */
+    return YES;
+}
 
 @end
